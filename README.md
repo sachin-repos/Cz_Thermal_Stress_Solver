@@ -33,7 +33,7 @@ This project uses `g++` (MinGW) for compilation.
 
 ```bash
 # Clone the repository
-git clone [https://github.com/YourUsername/Cz-Thermal-Stress-Solver.git](https://github.com/YourUsername/Cz-Thermal-Stress-Solver.git)
+git clone [https://github.com/YourUsername/Cz-Thermal-Stress-Solver.git](https://github.com/sachin-repos/Cz-Thermal-Stress-Solver.git)
 
 # Compile
 g++ main.cpp -o solver

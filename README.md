@@ -16,8 +16,9 @@ The core architecture is being built using an Object-Oriented approach.
 - [x] **Git Architecture:** Repository set up with meaningful commit history.
 - [x] **Mesh Data Structures:** - `Node` class (Coordinates & DOF).
     - `Element` class (Connectivity via Pointers).
-- [x] **Connectivity Logic:** Efficient memory management using `Node*` pointers to avoid data duplication.
-- [ ] **Stiffness Matrix:** Assembly of local $K$ matrices (Coming Soon).
+- [x] **Physics Engine:** - Material Properties ($E, A$) integration.
+    - **Local Stiffness Matrix ($k^e$)** calculation verified against manual derivation.
+- [ ] **Global Assembly:** Superposition of local matrices into the System Stiffness Matrix ($K_{global}$).
 - [ ] **Solver:** Gaussian Elimination / Linear Algebra solver.
 
 ## 🗺️ Roadmap (90-Day Plan)

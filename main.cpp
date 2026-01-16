@@ -28,5 +28,9 @@ int main() {
     std::cout << "Connecting Node " << e2.node1->id << " to Node " << e2.node2->id << std::endl;
     std::cout << "Calculated Length: " << e2.L << " m" << std::endl;
 
+    //print the stiffness matrices
+    e1.print_matrix();
+    e2.print_matrix();
+
     return 0;
 }

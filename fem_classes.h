@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <cmath> //required for std::abs
+#include <vector> //may use later
 
 //--THE BLUEPRINTS--//
 
@@ -39,6 +40,7 @@ class Element {
     double E; //Young's modulus (Stiffness)
     double A; //Area
     double L; //Length (Calculated, not given)
+    double k[2][2]; //Stiffness matrix
 
     //Constructor: "How to manufacture an Element"
     //Notice we accept node pointers (Node* n1, Node* n2)
@@ -51,6 +53,21 @@ class Element {
         //calculate the length automatically: |x2 - x1|
         //we use arrow (->) because node1 is a pointer
         L = std::abs(node2->x - node1->x);
+        //calculate stiffness immediately
+        calculate_stiffness();
+    }
+    void calculate_stiffness(){
+        double k_value = A*E/L;
+        k[0][0] = k_value;
+        k[0][1] = -k_value;
+        k[1][0] = -k_value;
+        k[1][1] = k_value;
+
+    }
+    void print_matrix(){
+        std::cout<<"Stiffness matrix for Element "<<id<<":"<<std::endl;
+        std::cout<<"[ "<<k[0][0]<<" "<<k[0][1]<<" ]"<<std::endl;
+        std::cout<<"[ "<<k[1][0]<<" "<<k[1][1]<<" ]"<<std::endl;
     }
 };
 

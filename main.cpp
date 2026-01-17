@@ -51,8 +51,8 @@ int main() {
 
     //1. SETUP -use simple numbers so we can verify the math easily
 
-    double E = 1000;
-    double A = 1;
+    double E = 210e9; //E of steel in GPa
+    double A = 0.01; //CS Area of the specimen 10 cm x 10 cm
 
     // MANUFACTURE THE PARTS (Objects) - Create 3 nodes (The Geometry)
     // Create Node 1 at x=0
@@ -102,7 +102,7 @@ int main() {
     //---4. APPLY LOADS (Force Vector)---
     // We want to pull node 3 to the right by 100 Newtons
     std::vector<double> F(num_nodes, 0);
-    F[2] = 100;
+    F[2] = 10000;
     std::cout<<"Applied F = 100 N at Node 3"<<std::endl;
 
     //---5. Apply Boundary Conditions (Fix node 1)---
